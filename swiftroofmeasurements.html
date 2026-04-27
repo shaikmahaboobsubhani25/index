@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SwiftRoof Measurements — Professional Roof Measurement Reports USA</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#080C10;--dark:#0D1318;--dark2:#111820;--dark3:#16202A;
+  --gold:#C9890A;--gold2:#E8A020;--gold3:#FFB930;--gold4:#FDE68A;
+  --slate:#1E3048;--blue:#1A2F4A;
+  --fog:#7A8FA3;--mist:#B0C0CF;--white:#FFFFFF;--off:#F0F4F8;
+  --green:#15803D;--red:#B91C1C;
+  --font-head:'Playfair Display',Georgia,serif;
+  --font-body:'Outfit',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--black);color:var(--white);overflow-x:hidden}
+
+/* ───── SCROLLBAR ───── */
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--dark)}
+::-webkit-scrollbar-thumb{background:var(--gold)}
+
+/* ───── NAV ───── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:200;
+  height:68px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 60px;
+  background:rgba(8,12,16,0.85);backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(201,137,10,0.12)}
+.nav-logo{font-family:var(--font-head);font-size:20px;font-weight:700;
+  color:var(--white);letter-spacing:0.02em}
+.nav-logo em{color:var(--gold2);font-style:normal}
+.nav-links{display:flex;gap:36px}
+.nav-links a{font-size:13px;font-weight:500;color:var(--fog);text-decoration:none;
+  letter-spacing:0.06em;text-transform:uppercase;transition:color .25s;cursor:pointer}
+.nav-links a:hover{color:var(--gold3)}
+.nav-btn{font-family:var(--font-body);font-weight:600;font-size:13px;
+  letter-spacing:0.08em;text-transform:uppercase;
+  padding:10px 26px;background:transparent;color:var(--gold2);
+  border:1.5px solid var(--gold2);border-radius:2px;cursor:pointer;
+  transition:all .25s}
+.nav-btn:hover{background:var(--gold2);color:var(--black)}
+
+/* ───── HERO ───── */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+.hero-img{position:absolute;inset:0;z-index:0}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.hero-overlay{position:absolute;inset:0;z-index:1;
+  background:linear-gradient(105deg,
+    rgba(8,12,16,0.97) 0%,
+    rgba(8,12,16,0.88) 45%,
+    rgba(8,12,16,0.4) 75%,
+    rgba(8,12,16,0.15) 100%)}
+.hero-content{position:relative;z-index:2;padding:120px 60px 80px;max-width:760px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;
+  background:rgba(201,137,10,0.1);border:1px solid rgba(201,137,10,0.3);
+  border-radius:2px;padding:6px 16px;margin-bottom:32px}
+.hb-dot{width:6px;height:6px;border-radius:50%;background:#4ADE80;animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1;box-shadow:0 0 6px #4ADE80}50%{opacity:.4;box-shadow:none}}
+.hb-text{font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold3)}
+.hero-title{font-family:var(--font-head);font-size:72px;font-weight:900;
+  line-height:1.0;letter-spacing:-0.02em;margin-bottom:8px}
+.hero-title .line2{color:var(--gold2)}
+.hero-title .line3{font-size:44px;font-weight:700;color:var(--mist);
+  font-style:italic;display:block;margin-top:6px}
+.hero-divider{width:60px;height:3px;background:var(--gold2);margin:28px 0}
+.hero-desc{font-size:17px;font-weight:300;color:var(--mist);line-height:1.75;
+  max-width:540px;margin-bottom:40px}
+.hero-desc strong{color:var(--white);font-weight:600}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:64px}
+.btn-primary{font-family:var(--font-body);font-weight:600;font-size:14px;
+  letter-spacing:0.08em;text-transform:uppercase;padding:16px 36px;
+  background:var(--gold2);color:var(--black);border:none;border-radius:2px;
+  cursor:pointer;transition:all .25s}
+.btn-primary:hover{background:var(--gold3);transform:translateY(-2px);
+  box-shadow:0 8px 24px rgba(201,137,10,0.35)}
+.btn-sec{font-family:var(--font-body);font-weight:500;font-size:14px;
+  letter-spacing:0.08em;text-transform:uppercase;padding:16px 36px;
+  background:rgba(255,255,255,0.06);color:var(--white);
+  border:1px solid rgba(255,255,255,0.15);border-radius:2px;cursor:pointer;transition:all .25s}
+.btn-sec:hover{border-color:var(--gold2);color:var(--gold3)}
+.hero-numbers{display:flex;gap:0;border-top:1px solid rgba(255,255,255,0.08)}
+.hn{padding:20px 36px 0 0;margin-right:36px;border-right:1px solid rgba(255,255,255,0.08)}
+.hn:last-child{border-right:none}
+.hn-num{font-family:var(--font-head);font-size:36px;font-weight:900;color:var(--gold2);line-height:1}
+.hn-lbl{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--fog);margin-top:4px}
+
+/* ───── MARQUEE ───── */
+.marquee-wrap{background:var(--gold2);padding:12px 0;overflow:hidden}
+.marquee-inner{display:inline-flex;animation:marquee 30s linear infinite;white-space:nowrap}
+.mi{font-family:var(--font-head);font-size:14px;font-weight:700;
+  color:var(--black);padding:0 28px;letter-spacing:0.04em;font-style:italic}
+.mi-sep{color:rgba(0,0,0,0.3);font-size:10px;padding:0 4px}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ───── SECTIONS ───── */
+.sec{padding:100px 60px}
+.sec-dark{background:var(--dark2)}
+.sec-darker{background:var(--dark3)}
+.sec-eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.se-line{width:40px;height:1px;background:var(--gold2)}
+.se-text{font-size:11px;font-weight:600;letter-spacing:0.18em;
+  text-transform:uppercase;color:var(--gold2)}
+.sec-h{font-family:var(--font-head);font-size:46px;font-weight:900;
+  line-height:1.08;letter-spacing:-0.01em;margin-bottom:16px}
+.sec-h em{color:var(--gold2);font-style:italic}
+.sec-p{font-size:16px;font-weight:300;color:var(--fog);line-height:1.8;
+  max-width:600px;margin-bottom:56px}
+
+/* ───── ABOUT SPLIT ───── */
+.about-split{display:grid;grid-template-columns:1fr 1fr;gap:0;
+  border:1px solid rgba(255,255,255,0.06);border-radius:8px;overflow:hidden}
+.about-img{position:relative;min-height:460px}
+.about-img img{width:100%;height:100%;object-fit:cover}
+.about-img-overlay{position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(8,12,16,0.3),rgba(201,137,10,0.1))}
+.about-text{background:var(--dark3);padding:56px 48px;display:flex;flex-direction:column;justify-content:center}
+.about-text h3{font-family:var(--font-head);font-size:32px;font-weight:900;
+  line-height:1.15;margin-bottom:20px}
+.about-text h3 em{color:var(--gold2);font-style:italic}
+.about-text p{font-size:15px;font-weight:300;color:var(--mist);line-height:1.8;margin-bottom:16px}
+.about-features{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+.af{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--mist)}
+.af-icon{width:28px;height:28px;border-radius:50%;background:rgba(201,137,10,0.12);
+  border:1px solid rgba(201,137,10,0.25);display:flex;align-items:center;justify-content:center;
+  font-size:12px;flex-shrink:0}
+
+/* ───── SERVICES ───── */
+.services-intro{display:grid;grid-template-columns:1fr 1fr;gap:60px;
+  align-items:start;margin-bottom:60px}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.06);border-radius:10px;overflow:hidden;
+  margin-bottom:1px}
+.svc-card{background:var(--dark2);padding:32px 28px;position:relative;
+  transition:background .3s;cursor:default}
+.svc-card:hover{background:var(--slate)}
+.svc-card:hover .svc-arrow{opacity:1;transform:translateX(0)}
+.svc-tier-dot{width:8px;height:8px;border-radius:50%;
+  position:absolute;top:20px;right:20px}
+.dot-core{background:var(--gold2)}
+.dot-spec{background:#4ADE80}
+.dot-bundle{background:#818CF8}
+.svc-num{font-family:var(--font-head);font-size:48px;font-weight:900;
+  color:rgba(201,137,10,0.1);line-height:1;margin-bottom:12px;
+  transition:color .3s}
+.svc-card:hover .svc-num{color:rgba(201,137,10,0.2)}
+.svc-title{font-family:var(--font-head);font-size:18px;font-weight:700;
+  margin-bottom:8px;color:var(--white);line-height:1.2}
+.svc-desc{font-size:13px;font-weight:300;color:var(--fog);line-height:1.65;margin-bottom:16px}
+.svc-bottom{display:flex;align-items:center;justify-content:space-between}
+.svc-price{font-family:var(--font-head);font-size:22px;font-weight:700;color:var(--gold2)}
+.svc-price small{font-family:var(--font-body);font-size:12px;font-weight:400;color:var(--fog)}
+.svc-arrow{font-size:18px;color:var(--gold2);opacity:0;
+  transform:translateX(-8px);transition:all .3s}
+.svc-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:10px}
+.stg{font-size:10px;font-weight:500;letter-spacing:0.08em;
+  background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);
+  color:var(--fog);padding:3px 9px;border-radius:2px}
+
+/* bundle row */
+.bundle-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
+.bundle-card{background:var(--dark3);border:1px solid rgba(129,140,248,0.2);
+  border-radius:8px;padding:24px;position:relative;overflow:hidden;transition:border-color .3s}
+.bundle-card:hover{border-color:rgba(129,140,248,0.5)}
+.bundle-card::before{content:'BUNDLE';position:absolute;top:14px;right:14px;
+  font-size:9px;font-weight:700;letter-spacing:0.14em;
+  background:rgba(129,140,248,0.12);color:#818CF8;
+  padding:3px 8px;border-radius:2px}
+.bc-title{font-family:var(--font-head);font-size:18px;font-weight:700;margin-bottom:6px}
+.bc-includes{font-size:12px;font-weight:300;color:var(--fog);line-height:1.6;margin-bottom:14px}
+.bc-price{font-family:var(--font-head);font-size:26px;font-weight:700;color:var(--gold2)}
+.bc-save{font-size:11px;color:#4ADE80;font-weight:500;margin-left:8px}
+
+/* ───── IMAGE GALLERY ───── */
+.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:240px 240px;
+  gap:6px;margin-bottom:60px;border-radius:10px;overflow:hidden}
+.gi{position:relative;overflow:hidden}
+.gi img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.gi:hover img{transform:scale(1.04)}
+.gi-overlay{position:absolute;inset:0;background:rgba(8,12,16,0.35);
+  transition:background .3s}
+.gi:hover .gi-overlay{background:rgba(8,12,16,0.15)}
+.gi-label{position:absolute;bottom:14px;left:14px;
+  font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;
+  background:rgba(8,12,16,0.7);color:var(--gold3);
+  padding:4px 12px;border-radius:2px;backdrop-filter:blur(4px)}
+.gi-large{grid-row:span 2}
+
+/* ───── PROCESS ───── */
+.process-timeline{position:relative;padding-left:40px}
+.pt-line{position:absolute;left:18px;top:0;bottom:0;width:1px;
+  background:linear-gradient(180deg,var(--gold2),rgba(201,137,10,0.1))}
+.pt-step{position:relative;padding:0 0 48px 48px}
+.pt-step:last-child{padding-bottom:0}
+.pt-dot{position:absolute;left:-32px;top:4px;
+  width:36px;height:36px;border-radius:50%;
+  background:var(--gold2);color:var(--black);
+  font-family:var(--font-head);font-size:16px;font-weight:900;
+  display:flex;align-items:center;justify-content:center}
+.pt-title{font-family:var(--font-head);font-size:20px;font-weight:700;
+  margin-bottom:6px;color:var(--white)}
+.pt-desc{font-size:14px;font-weight:300;color:var(--fog);line-height:1.7;max-width:520px}
+.pt-time{display:inline-block;margin-top:8px;font-size:11px;font-weight:600;
+  letter-spacing:0.1em;text-transform:uppercase;color:var(--gold2);
+  background:rgba(201,137,10,0.08);padding:3px 12px;border-radius:2px}
+
+.process-img{border-radius:8px;overflow:hidden;position:sticky;top:100px;background:#fff}
+.process-img img{width:100%;height:520px;object-fit:cover;opacity:0.9}
+.process-img-overlay{position:absolute;inset:0;
+  background:linear-gradient(to bottom,transparent 50%,rgba(8,12,16,0.95))}
+.process-img-caption{position:absolute;bottom:24px;left:24px;right:24px}
+.pic-title{font-family:var(--font-head);font-size:22px;font-weight:700;margin-bottom:4px;color:var(--white)}
+.pic-sub{font-size:13px;font-weight:300;color:var(--mist)}
+
+/* ───── DELIVERABLES ───── */
+.deliv-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.deliv-col{background:var(--dark3);border:1px solid rgba(255,255,255,0.06);
+  border-radius:8px;padding:32px}
+.deliv-col-title{font-family:var(--font-head);font-size:20px;font-weight:700;
+  margin-bottom:6px;padding-bottom:16px;
+  border-bottom:1px solid rgba(255,255,255,0.07)}
+.deliv-col-title span{color:var(--gold2)}
+.di{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.04)}
+.di:last-child{border-bottom:none}
+.di-check{color:#4ADE80;font-size:14px;flex-shrink:0;margin-top:1px}
+.di-text{font-size:13.5px;font-weight:300;color:var(--mist);line-height:1.5}
+.di-text strong{color:var(--white);font-weight:600}
+
+/* ───── WHY US ───── */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.why-card{background:var(--dark3);border:1px solid rgba(255,255,255,0.06);
+  border-radius:8px;padding:28px;
+  border-top:2px solid transparent;transition:border-color .3s}
+.why-card:hover{border-top-color:var(--gold2)}
+.wc-icon{font-size:28px;margin-bottom:14px}
+.wc-title{font-family:var(--font-head);font-size:18px;font-weight:700;
+  margin-bottom:8px;color:var(--white)}
+.wc-desc{font-size:13.5px;font-weight:300;color:var(--fog);line-height:1.7}
+
+/* ───── COMPARISON ───── */
+.cmp-table{width:100%;border-collapse:separate;border-spacing:0;
+  border:1px solid rgba(255,255,255,0.08);border-radius:8px;overflow:hidden}
+.cmp-table th{padding:14px 18px;font-size:11px;font-weight:600;
+  letter-spacing:0.12em;text-transform:uppercase;text-align:left;
+  background:var(--dark3);color:var(--fog)}
+.cmp-table th.us{background:rgba(201,137,10,0.1);color:var(--gold3)}
+.cmp-table td{padding:13px 18px;font-size:13.5px;font-weight:300;color:var(--fog);
+  border-top:1px solid rgba(255,255,255,0.05)}
+.cmp-table td:first-child{color:var(--mist);font-weight:500}
+.cmp-table td.us{background:rgba(201,137,10,0.04)}
+.cmp-table tr:hover td{background:rgba(255,255,255,0.02)}
+.cmp-table tr:hover td.us{background:rgba(201,137,10,0.07)}
+.yes{color:#4ADE80;font-weight:600}
+.no{color:#F87171}
+.maybe{color:#FCD34D}
+
+/* ───── CLIENTS ───── */
+.clients-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:48px}
+.client-box{background:var(--dark3);border:1px solid rgba(255,255,255,0.06);
+  border-radius:8px;padding:20px;display:flex;flex-direction:column;gap:8px;
+  transition:border-color .3s}
+.client-box:hover{border-color:rgba(201,137,10,0.3)}
+.cb-icon{font-size:24px}
+.cb-name{font-family:var(--font-head);font-size:15px;font-weight:700;color:var(--white)}
+.cb-desc{font-size:12px;font-weight:300;color:var(--fog);line-height:1.5}
+
+/* ───── TESTIMONIALS ───── */
+.testi-hero{position:relative;border-radius:10px;overflow:hidden;margin-bottom:24px;min-height:340px}
+.testi-hero img{width:100%;height:340px;object-fit:cover;object-position:center 40%}
+.testi-hero-overlay{position:absolute;inset:0;
+  background:linear-gradient(to right,rgba(8,12,16,0.95) 40%,rgba(8,12,16,0.3))}
+.testi-hero-content{position:absolute;inset:0;padding:48px 56px;
+  display:flex;flex-direction:column;justify-content:center;max-width:560px}
+.th-stars{color:var(--gold2);font-size:16px;letter-spacing:3px;margin-bottom:16px}
+.th-quote{font-family:var(--font-head);font-size:22px;font-weight:700;
+  line-height:1.45;margin-bottom:20px;color:var(--white);font-style:italic}
+.th-name{font-size:13px;font-weight:600;letter-spacing:0.08em;
+  text-transform:uppercase;color:var(--gold3)}
+.th-role{font-size:12px;font-weight:300;color:var(--fog);margin-top:3px}
+.testi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tc{background:var(--dark3);border:1px solid rgba(255,255,255,0.07);
+  border-radius:8px;padding:24px;position:relative}
+.tc::before{content:'\201C';font-family:var(--font-head);font-size:72px;font-weight:900;
+  color:rgba(201,137,10,0.1);position:absolute;top:-6px;left:16px;line-height:1}
+.tc-stars{color:var(--gold2);font-size:11px;letter-spacing:2px;margin-bottom:12px}
+.tc-text{font-size:13px;font-weight:300;color:var(--mist);line-height:1.7;
+  margin-bottom:16px;font-style:italic}
+.tc-name{font-size:12px;font-weight:700;letter-spacing:0.08em;
+  text-transform:uppercase;color:var(--gold3)}
+.tc-role{font-size:11px;font-weight:300;color:var(--fog);margin-top:2px}
+
+/* ───── CTA BANNER ───── */
+.cta-banner{position:relative;overflow:hidden;border-radius:10px;margin:0 60px}
+.cta-banner img{width:100%;height:320px;object-fit:cover;object-position:center 60%}
+.cta-banner-overlay{position:absolute;inset:0;
+  background:linear-gradient(105deg,rgba(8,12,16,0.97) 0%,rgba(8,12,16,0.8) 60%,rgba(8,12,16,0.5) 100%)}
+.cta-content{position:absolute;inset:0;padding:0 72px;
+  display:flex;align-items:center;justify-content:space-between;gap:40px}
+.cc-left h2{font-family:var(--font-head);font-size:38px;font-weight:900;
+  line-height:1.1;margin-bottom:10px}
+.cc-left h2 em{color:var(--gold2);font-style:italic}
+.cc-left p{font-size:15px;font-weight:300;color:var(--mist);max-width:420px;line-height:1.6}
+.cc-right{display:flex;flex-direction:column;gap:12px;min-width:220px}
+.cc-stat{text-align:center;background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:14px 20px}
+.css-num{font-family:var(--font-head);font-size:28px;font-weight:900;color:var(--gold2);line-height:1}
+.css-lbl{font-size:10px;font-weight:500;letter-spacing:0.1em;
+  text-transform:uppercase;color:var(--fog);margin-top:3px}
+
+/* ───── CONTACT ───── */
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.contact-form{background:var(--dark3);border:1px solid rgba(255,255,255,0.07);
+  border-radius:10px;padding:40px}
+.cf-title{font-family:var(--font-head);font-size:26px;font-weight:700;
+  margin-bottom:4px}
+.cf-sub{font-size:14px;font-weight:300;color:var(--fog);margin-bottom:28px;line-height:1.6}
+.fg{margin-bottom:16px}
+.fg label{display:block;font-size:11px;font-weight:600;
+  letter-spacing:0.1em;text-transform:uppercase;color:var(--fog);margin-bottom:6px}
+.fg input,.fg select,.fg textarea{
+  width:100%;background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.1);border-radius:4px;
+  padding:12px 14px;font-family:var(--font-body);font-size:14px;
+  color:var(--white);outline:none;transition:border-color .25s}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold2)}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(122,143,163,0.5)}
+.fg select option{background:var(--dark2)}
+.fg textarea{height:90px;resize:none}
+.fg-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.submit-btn{width:100%;font-family:var(--font-body);font-weight:600;font-size:14px;
+  letter-spacing:0.1em;text-transform:uppercase;padding:16px;
+  background:var(--gold2);color:var(--black);border:none;border-radius:4px;
+  cursor:pointer;margin-top:8px;transition:all .25s}
+.submit-btn:hover{background:var(--gold3);transform:translateY(-1px);
+  box-shadow:0 6px 20px rgba(201,137,10,0.3)}
+.contact-right{display:flex;flex-direction:column;gap:0}
+.cr-img{border-radius:10px;overflow:hidden;margin-bottom:24px;height:220px}
+.cr-img img{width:100%;height:100%;object-fit:cover}
+.ci-items{display:flex;flex-direction:column;gap:0}
+.ci-item{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.07)}
+.ci-item:last-child{border-bottom:none}
+.ci-icon{width:44px;height:44px;flex-shrink:0;
+  background:rgba(201,137,10,0.08);border:1px solid rgba(201,137,10,0.2);
+  border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:20px}
+.ci-label{font-size:10px;font-weight:600;letter-spacing:0.1em;
+  text-transform:uppercase;color:var(--fog);margin-bottom:3px}
+.ci-val{font-size:14px;font-weight:400;color:var(--white)}
+
+/* ───── FOOTER ───── */
+.footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.07);
+  padding:48px 60px 32px}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.ft-brand{}
+.ft-logo{font-family:var(--font-head);font-size:22px;font-weight:700;margin-bottom:12px}
+.ft-logo em{color:var(--gold2);font-style:italic}
+.ft-desc{font-size:13px;font-weight:300;color:var(--fog);line-height:1.7;max-width:260px}
+.ft-col h4{font-size:11px;font-weight:700;letter-spacing:0.14em;
+  text-transform:uppercase;color:var(--gold2);margin-bottom:14px}
+.ft-col a{display:block;font-size:13px;font-weight:300;color:var(--fog);
+  text-decoration:none;margin-bottom:8px;transition:color .2s;cursor:pointer}
+.ft-col a:hover{color:var(--white)}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;
+  padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);flex-wrap:wrap;gap:12px}
+.fb-copy{font-size:12px;color:rgba(122,143,163,0.5)}
+.fb-badges{display:flex;gap:10px}
+.fb-badge{font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;
+  background:rgba(255,255,255,0.05);color:var(--fog);
+  padding:4px 12px;border-radius:2px;border:1px solid rgba(255,255,255,0.08)}
+
+/* ───── ANIMATIONS ───── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.hero-content>*{animation:fadeUp .7s ease both}
+.hero-content>*:nth-child(1){animation-delay:.1s}
+.hero-content>*:nth-child(2){animation-delay:.2s}
+.hero-content>*:nth-child(3){animation-delay:.35s}
+.hero-content>*:nth-child(4){animation-delay:.5s}
+.hero-content>*:nth-child(5){animation-delay:.6s}
+.hero-content>*:nth-child(6){animation-delay:.7s}
+
+/* ───── MOBILE ───── */
+@media(max-width:1024px){
+  .nav{padding:0 24px}.nav-links{display:none}
+  .hero-content{padding:100px 24px 60px}
+  .hero-title{font-size:48px}.hero-title .line3{font-size:30px}
+  .sec{padding:64px 24px}
+  .gallery{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .gi-large{grid-row:auto}
+  .svc-grid{grid-template-columns:1fr 1fr}
+  .why-grid,.testi-row,.clients-row{grid-template-columns:1fr 1fr}
+  .about-split,.contact-wrap,.services-intro,.deliv-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr 1fr}
+  .cta-banner{margin:0 24px}.cta-content{flex-direction:column;padding:40px 32px}
+  .bundle-row,.pricing-two{grid-template-columns:1fr}
+  .hero-numbers{flex-wrap:wrap;gap:16px}
+  .hn{border-right:none;margin-right:0;padding-right:0}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-logo">Swift<em>Roof</em> Measurements</div>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#process">How It Works</a>
+    <a href="#why">Why Us</a>
+    <a href="#testimonials">Reviews</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <button class="nav-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a Quote</button>
+</nav>
+
+<section class="hero">
+  <div class="hero-img">
+    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1800&auto=format&fit=crop&q=80" alt="Aerial view of residential rooftops"/>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="hb-dot"></span>
+      <span class="hb-text">Now Accepting Orders — All 50 States</span>
+    </div>
+    <h1 class="hero-title">
+      Precision Roof<br>
+      <span class="line2">Measurements</span>
+      <span class="line3">Delivered in 24 Hours</span>
+    </h1>
+    <div class="hero-divider"></div>
+    <p class="hero-desc">
+      Xactimate-ready roof measurement reports for <strong>roofing contractors,
+      public adjusters &amp; insurance companies.</strong> Every report
+      hand-verified by a certified estimator — not automated software.
+    </p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Submit a Job Today →</button>
+      <button class="btn-sec" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">View All Services</button>
+    </div>
+    <div class="hero-numbers">
+      <div class="hn"><div class="hn-num">99%</div><div class="hn-lbl">Accuracy Guarantee</div></div>
+      <div class="hn"><div class="hn-num">24hr</div><div class="hn-lbl">Avg Turnaround</div></div>
+      <div class="hn"><div class="hn-num">8+</div><div class="hn-lbl">Report Types</div></div>
+      <div class="hn"><div class="hn-num">All 50</div><div class="hn-lbl">States Covered</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee-wrap">
+  <div class="marquee-inner">
+    <span class="mi">Simple Residential — $35</span><span class="mi-sep">◆</span>
+    <span class="mi">Complex Residential — $55</span><span class="mi-sep">◆</span>
+    <span class="mi">Simple Commercial — $65</span><span class="mi-sep">◆</span>
+    <span class="mi">Complex Commercial — $95</span><span class="mi-sep">◆</span>
+    <span class="mi">Blueprint-Based — $75</span><span class="mi-sep">◆</span>
+    <span class="mi">Multi-Family — from $75</span><span class="mi-sep">◆</span>
+    <span class="mi">Gutter & Fascia — $35</span><span class="mi-sep">◆</span>
+    <span class="mi">Wall / Siding — $55</span><span class="mi-sep">◆</span>
+    <span class="mi">ESX + PDF Delivery</span><span class="mi-sep">◆</span>
+    <span class="mi">Free Revisions Included</span><span class="mi-sep">◆</span>
+    <span class="mi">Simple Residential — $35</span><span class="mi-sep">◆</span>
+    <span class="mi">Complex Residential — $55</span><span class="mi-sep">◆</span>
+    <span class="mi">Simple Commercial — $65</span><span class="mi-sep">◆</span>
+    <span class="mi">Complex Commercial — $95</span><span class="mi-sep">◆</span>
+    <span class="mi">Blueprint-Based — $75</span><span class="mi-sep">◆</span>
+    <span class="mi">Multi-Family — from $75</span><span class="mi-sep">◆</span>
+    <span class="mi">Gutter & Fascia — $35</span><span class="mi-sep">◆</span>
+    <span class="mi">Wall / Siding — $55</span><span class="mi-sep">◆</span>
+    <span class="mi">ESX + PDF Delivery</span><span class="mi-sep">◆</span>
+    <span class="mi">Free Revisions Included</span><span class="mi-sep">◆</span>
+  </div>
+</div>
+
+<section class="sec sec-dark">
+  <div class="about-split">
+    <div class="about-img">
+      <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=900&auto=format&fit=crop&q=80" alt="Detailed residential home exterior"/>
+      <div class="about-img-overlay"></div>
+    </div>
+    <div class="about-text">
+      <div class="sec-eyebrow"><div class="se-line"></div><div class="se-text">Who We Are</div></div>
+      <h3>Human Accuracy<br><em>Software Can't Match</em></h3>
+      <p>SwiftRoof Measurements delivers professional, Xactimate-ready roof measurement reports to roofing contractors, public adjusters, and insurance companies across all 50 states.</p>
+      <p>Every report is hand-traced and manually verified by a certified estimator — not generated by automation. When complex rooflines, tree coverage, or rural properties defeat automated tools, we deliver.</p>
+      <div class="about-features">
+        <div class="af"><span class="af-icon">✦</span>Certified Xactimate estimators on every job</div>
+        <div class="af"><span class="af-icon">✦</span>ESX files that open directly in Xactimate — no redrawing</div>
+        <div class="af"><span class="af-icon">✦</span>Complex, commercial, and blueprint jobs accepted</div>
+        <div class="af"><span class="af-icon">✦</span>Free revision guarantee on every report</div>
+        <div class="af"><span class="af-icon">✦</span>24-hour standard turnaround, 12-hour rush available</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-eyebrow"><div class="se-line"></div><div class="se-text">Properties We Measure</div></div>
+  <div class="sec-h">Every Residential Roof.<br><em>Every State.</em></div>
+  <div class="gallery">
+    <div class="gi gi-large">
+      <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=900&auto=format&fit=crop&q=80" alt="Complex residential home aerial view"/>
+      <div class="gi-overlay"></div>
+      <div class="gi-label">Complex Residential</div>
+    </div>
+    <div class="gi">
+      <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b468?w=600&auto=format&fit=crop&q=80" alt="Standard residential home"/>
+      <div class="gi-overlay"></div>
+      <div class="gi-label">Standard Residential</div>
+    </div>
+    <div class="gi">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&auto=format&fit=crop&q=80" alt="New construction home"/>
+      <div class="gi-overlay"></div>
+      <div class="gi-label">New Construction</div>
+    </div>
+    <div class="gi">
+      <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&auto=format&fit=crop&q=80" alt="Luxury home rooftop"/>
+      <div class="gi-overlay"></div>
+      <div class="gi-label">Luxury Residential</div>
+    </div>
+    <div class="gi">
+      <img src="https://images.unsplash.com/photo-1558036117-15d82a90b9b1?w=600&auto=format&fit=crop&q=80" alt="Townhouse roof"/>
+      <div class="gi-overlay"></div>
+      <div class="gi-label">Townhouse / Duplex</div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="sec sec-dark">
+  <div class="sec-eyebrow"><div class="se-line"></div><div class="se-text">Our Services</div></div>
+  <div class="services-intro">
+    <div>
+      <div class="sec-h" style="margin-bottom:16px">8 Report Types.<br><em>Every Job Covered.</em></div>
+      <p style="font-size:15px;font-weight:300;color:var(--fog);line-height:1.8;margin-bottom:0">From simple residential homes to complex commercial properties — every report delivered in PDF and ESX format, verified by a human estimator, and ready to open in Xactimate.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;padding-top:8px">
+      <div style="display:flex;align-items:center;gap:12px;padding:14px 16px;background:rgba(201,137,10,0.06);border:1px solid rgba(201,137,10,0.15);border-radius:4px">
+        <span style="font-size:20px">🟡</span>
+        <div><div style="font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold2);margin-bottom:2px">Core Reports</div><div style="font-size:12px;color:var(--fog)">Residential & Commercial — $35–$95</div></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;padding:14px 16px;background:rgba(74,222,128,0.04);border:1px solid rgba(74,222,128,0.15);border-radius:4px">
+        <span style="font-size:20px">🟢</span>
+        <div><div style="font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#4ADE80;margin-bottom:2px">Specialty Reports</div><div style="font-size:12px;color:var(--fog)">Blueprint, Gutter, Wall, Multi-Family</div></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;padding:14px 16px;background:rgba(129,140,248,0.04);border:1px solid rgba(129,140,248,0.15);border-radius:4px">
+        <span style="font-size:20px">🟣</span>
+        <div><div style="font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#818CF8;margin-bottom:2px">Bundle Packages</div><div style="font-size:12px;color:var(--fog)">Save up to $25 per order</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="svc-grid">
+    <div class="svc-card"><span class="svc-tier-dot dot-core"></span><div class="svc-num">01</div><div class="svc-title">Simple Residential</div><div class="svc-desc">Standard single-family homes with straightforward rooflines. Squares, pitch, all linear measurements, waste factor, and ESX file included.</div><div class="svc-bottom"><div class="svc-price">$35<small>/report</small></div><span class="svc-arrow">→</span></div><div class="svc-tags"><span class="stg">PDF</span><span class="stg">ESX</span><span class="stg">12–24hr</span></div></div>
+
+    <div class="svc-card"><span class="svc-tier-dot dot-core"></span><div class="svc-num">02</div><div class="svc-title">Complex Residential</div><div class="svc-desc">Larger homes with multiple facets, dormers, turrets, or irregular shapes automated tools get wrong. Full breakdown + ESX.</div><div class="svc-bottom"><div class="svc-price">$55<small>/report</small></div><span class="svc-arrow">→</span></div><div class="svc-tags"><span class="stg">PDF</span><span class="stg">ESX</span><span class="stg">24hr</span></div></div>
+
+    <div class="svc-card"><span class="svc-tier-dot dot-core"></span><div class="svc-num">03</div><div class="svc-title">Simple Commercial</div><div class="svc-desc">Small commercial buildings, flat roofs, single-slope structures up to 50 squares. Full measurements and Xactimate-compatible ESX.</div><div class="svc-bottom"><div class="svc-price">$65<small>/report</small></div><span class="svc-arrow">→</span></div><div class="svc-tags"><span class="stg">PDF</span><span class="stg">ESX</span><span class="stg">24hr</span></div></div>
+
+    <div class="svc-card"><span class="svc-tier-dot dot-core"></span><div class="svc-num">04</div><div class="svc-title">Complex Commercial</div><div class="svc-desc">Large commercial, multi-section roofs, warehouses above 50 squares. Where automated software fails, our CAD-verified team delivers.</div><div class="svc-bottom"><div class="svc-price">$95<small>/report</small></div><span class="svc-arrow">→</span></div><div class="svc-tags"><span class="stg">PDF</span><span class="stg">ESX</span><span class="stg">48hr</span></div></div>
+
+    <div class="svc-card"><span class="svc-tier-dot dot-spec"></span><div class="svc-num">05</div><div class="svc-title">Multi-Family / Apartment</div><div class="svc-desc">Apartment buildings, duplexes, townhomes, HOA communities. Multiple structures measured in one comprehensive report.</div><div class="svc-bottom"><div class="svc-price">$75–95<small>/report</small></div><span class="svc-arrow">→</span></div><div class="svc-tags"><span class="stg">PDF</span><span class="stg">ESX</span><span class="stg">24–48hr</span></div></div>
+
+    <div class="svc-card"><span class="svc-tier-dot dot-spec"></span><div class="svc-num">06</div><div class="svc-title">Blueprint-Based</div><div class="svc-desc">New construction or no aerial imagery available. Upload PDF blueprints — we produce full Xactimate sketch and measurements.</div><div class="svc-bottom"><div class="svc-price">$75<small>/report</small></div><span class="svc-arrow">→</span></div><div class="svc-tags"><span class="stg">Blueprint</span><span class="stg">ESX</span><span class="stg">24hr</span></div></div>
+
+    <div class="svc-card"><span class="svc-tier-dot dot-spec"></span><div class="svc-num">07</div><div class="svc-title">Gutter &amp; Fascia</div><div class="svc-desc">Eave lengths, downspout count, miter corners for gutter contractors. Available standalone or as an add-on to any roof report.</div><div class="svc-bottom"><div class="svc-price">$35<small>/report</small></div><span class="svc-arrow">→</span></div><div class="svc-tags"><span class="stg">PDF</span><span class="stg">12hr</span><span class="stg">Add-on</span></div></div>
+
+    <div class="svc-card"><span class="svc-tier-dot dot-spec"></span><div class="svc-num">08</div><div class="svc-title">Wall &amp; Siding</div><div class="svc-desc">Exterior wall measurements for siding and painting contractors. Wall facets, area, doors and windows deducted accurately.</div><div class="svc-bottom"><div class="svc-price">$55<small>/report</small></div><span class="svc-arrow">→</span></div><div class="svc-tags"><span class="stg">PDF</span><span class="stg">24hr</span><span class="stg">Siding</span></div></div>
+
+    <div class="svc-card" style="grid-column:span 3;background:rgba(129,140,248,0.04)">
+      <div class="svc-num" style="color:rgba(129,140,248,0.15)">☆</div>
+      <div class="svc-title">Volume Pricing Available</div>
+      <div class="svc-desc">Ordering 20+ reports per month? Contact us for custom volume pricing. We offer dedicated account management and priority turnaround for high-volume contractors and public adjusters.</div>
+      <button class="btn-primary" style="margin-top:12px;width:auto;padding:10px 24px;font-size:13px" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Request Volume Pricing →</button>
+    </div>
+  </div>
+
+  <div style="margin-top:40px">
+    <div class="sec-eyebrow" style="margin-bottom:12px"><div class="se-line"></div><div class="se-text">Bundle &amp; Save</div></div>
+    <div class="bundle-row">
+      <div class="bundle-card"><div class="bc-title">Starter Bundle</div><div class="bc-includes">Simple Residential Report + Gutter Report — everything needed for a basic residential exterior quote.</div><div><span class="bc-price">$60</span><span class="bc-save">Save $10</span></div></div>
+      <div class="bundle-card"><div class="bc-title">Contractor Bid Bundle</div><div class="bc-includes">Complex Residential + Wall/Siding Report — complete exterior scope for full renovation bids.</div><div><span class="bc-price">$95</span><span class="bc-save">Save $15</span></div></div>
+      <div class="bundle-card"><div class="bc-title">Full Property Bundle</div><div class="bc-includes">Roof + Gutter + Wall reports — the complete exterior package for large restoration projects.</div><div><span class="bc-price">$120</span><span class="bc-save">Save $25</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-eyebrow"><div class="se-line"></div><div class="se-text">Deliverables</div></div>
+  <div class="sec-h">What's Inside<br><em>Every Report</em></div>
+  <p class="sec-p">Every report is manually verified before delivery. You receive two files — a detailed PDF and an ESX file ready for Xactimate.</p>
+  <div class="deliv-grid">
+    <div class="deliv-col">
+      <div class="deliv-col-title">📄 PDF Report — <span>Detailed Visual Output</span></div>
+      <div class="di"><span class="di-check">✔</span><div class="di-text"><strong>Total Roof Area</strong> — squares with waste factor table at 10%, 12%, 15%</div></div>
+      <div class="di"><span class="di-check">✔</span><div class="di-text"><strong>Pitch / Slope Breakdown</strong> — every facet labeled with exact pitch value</div></div>
+      <div class="di"><span class="di-check">✔</span><div class="di-text"><strong>Linear Measurements</strong> — ridge, rake, hip, valley, eave, flashing lengths</div></div>
+      <div class="di"><span class="di-check">✔</span><div class="di-text"><strong>3D Color-Coded Roof Diagram</strong> — visual facet map for quick reference</div></div>
+      <div class="di"><span class="di-check">✔</span><div class="di-text"><strong>Aerial Property Image</strong> — high-resolution satellite view with roof outlined</div></div>
+      <div class="di"><span class="di-check">✔</span><div class="di-text"><strong>Ice &amp; Water Shield Areas</strong> — eave and valley areas pre-calculated</div></div>
+      <div class="di"><span class="di-check">✔</span><div class="di-text"><strong>Penetrations &amp; Skylights</strong> — counted and noted where visible from aerial</div></div>
+    </div>
+    <div class="deliv-col">
+      <div class="deliv-col-title">💾 ESX File — <span>Xactimate Ready</span></div>
+      <div class="di"><span class="di-check">✔</span><div class="di-text"><strong>Direct Xactimate Import</strong> — open instantly, sketch pre-loaded, no redrawing</div></div>
+      <div class="di"><span class="di-check">✔</span><div class="di-text"><strong>All Facets Pre-drawn</strong> — every section mapped with correct dimensions</div></div>
+      <div class="di"><span class="di-check">✔</span><div class="di-text"><strong>Pitch Values Embedded</strong> — each facet carries its pitch for auto calculations</div></div>
+      <div class="di"><span class="di-check">✔</span><div class="di-text"><strong>Edge Types Classified</strong> — ridge, rake, hip, valley, eave labeled correctly</div></div>
+      <div class="di"><span class="di-check">✔</span><div class="di-text"><strong>Waste Factor Pre-set</strong> — default 10%, adjustable inside Xactimate</div></div>
+      <div class="di"><span class="di-check">✔</span><div class="di-text"><strong>Symbility XML Available</strong> — on request at no additional charge</div></div>
+      <div class="di"><span class="di-check">✔</span><div class="di-text"><strong>Human QC Verified</strong> — reviewed by a certified estimator before every delivery</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="process" class="sec sec-dark">
+  <div class="sec-eyebrow"><div class="se-line"></div><div class="se-text">How It Works</div></div>
+  <div class="sec-h" style="margin-bottom:48px">From Submission<br><em>to Delivery</em></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start">
+    <div class="process-timeline">
+      <div class="pt-line"></div>
+      <div class="pt-step">
+        <div class="pt-dot">1</div>
+        <div class="pt-title">Submit Your Job</div>
+        <div class="pt-desc">Fill out our simple order form with the property address, report type, and any special notes. Attach blueprints if ordering a blueprint-based report.</div>
+        <span class="pt-time">Takes 2 minutes</span>
+      </div>
+      <div class="pt-step">
+        <div class="pt-dot">2</div>
+        <div class="pt-title">We Confirm &amp; Invoice</div>
+        <div class="pt-desc">We confirm receipt within 1 hour and send a payment invoice. Work begins immediately upon payment confirmation via Payoneer or bank transfer.</div>
+        <span class="pt-time">Within 1 hour</span>
+      </div>
+      <div class="pt-step">
+        <div class="pt-dot">3</div>
+        <div class="pt-title">Certified Estimator Measures</div>
+        <div class="pt-desc">Our Xactimate-certified estimator manually traces and measures every roof facet using high-resolution aerial imagery. No automation, no shortcuts.</div>
+        <span class="pt-time">12–24 hours</span>
+      </div>
+      <div class="pt-step">
+        <div class="pt-dot">4</div>
+        <div class="pt-title">Quality Control Review</div>
+        <div class="pt-desc">Every report is reviewed for accuracy before delivery — pitch values, linear measurements, and ESX file integrity are all verified against our 99% accuracy standard.</div>
+        <span class="pt-time">Before every delivery</span>
+      </div>
+      <div class="pt-step">
+        <div class="pt-dot">5</div>
+        <div class="pt-title">PDF + ESX Delivered</div>
+        <div class="pt-desc">Both files delivered to your email within the guaranteed turnaround window. Open the ESX in Xactimate instantly — the sketch is complete and ready to estimate.</div>
+        <span class="pt-time">On time, guaranteed</span>
+      </div>
+    </div>
+    <div style="position:relative">
+      <div class="process-img">
+        <img src="https://images.unsplash.com/photo-1541888086425-d81bb19240f5?w=800&auto=format&fit=crop&q=80" alt="Architectural drawings and blueprint"/>
+        <div class="process-img-overlay"></div>
+        <div class="process-img-caption">
+          <div class="pic-title">Precision Drafting</div>
+          <div class="pic-sub">Every dimension verified against industry standards</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why" class="sec">
+  <div class="sec-eyebrow"><div class="se-line"></div><div class="se-text">Why SwiftRoof</div></div>
+  <div class="sec-h">The Difference<br><em>You'll Notice Immediately</em></div>
+  <p class="sec-p">When you open our ESX file in Xactimate — every facet is drawn, every pitch is set, every edge is labeled. No redrawing, no corrections, no time wasted.</p>
+  <div class="why-grid">
+    <div class="why-card"><div class="wc-icon">🎯</div><div class="wc-title">99% Accuracy, Guaranteed</div><div class="wc-desc">Every report manually verified by a certified estimator. If measurements are off, we correct it free within 4 hours — no questions asked.</div></div>
+    <div class="why-card"><div class="wc-icon">⚡</div><div class="wc-title">12–24hr Turnaround</div><div class="wc-desc">Standard delivery in 24 hours. Rush 12-hour delivery for urgent jobs. We have never missed a deadline in our operating history.</div></div>
+    <div class="why-card"><div class="wc-icon">🌲</div><div class="wc-title">No Property Too Complex</div><div class="wc-desc">Tree-covered, rural, irregular, or blueprint-only — we handle what every automated tool refuses. Complex roofs are our specialty.</div></div>
+    <div class="why-card"><div class="wc-icon">💾</div><div class="wc-title">ESX Opens Instantly</div><div class="wc-desc">Full sketch pre-loaded in Xactimate. No redrawing, no manual entry. Open the file and start adding line items immediately.</div></div>
+    <div class="why-card"><div class="wc-icon">💰</div><div class="wc-title">Pay Per Report</div><div class="wc-desc">No monthly subscription. No minimum orders. Order one report or one hundred — same price, same quality, same turnaround.</div></div>
+    <div class="why-card"><div class="wc-icon">🔁</div><div class="wc-title">Free Revision Policy</div><div class="wc-desc">Every report comes with a free revision within 24 hours of delivery. Your accuracy is our responsibility, not yours.</div></div>
+  </div>
+</section>
+
+<section class="sec sec-dark">
+  <div class="sec-eyebrow"><div class="se-line"></div><div class="se-text">Who We Serve</div></div>
+  <div class="sec-h" style="margin-bottom:40px">Built For Every<br><em>Roofing Professional</em></div>
+  <div class="clients-row">
+    <div class="client-box"><div class="cb-icon">🔨</div><div class="cb-name">Roofing Contractors</div><div class="cb-desc">Residential & commercial bids, storm restoration, insurance jobs</div></div>
+    <div class="client-box"><div class="cb-icon">⚖️</div><div class="cb-name">Public Adjusters</div><div class="cb-desc">Insurance claim support, measurement documentation</div></div>
+    <div class="client-box"><div class="cb-icon">🏢</div><div class="cb-name">Insurance Companies</div><div class="cb-desc">Claim verification, desk reviews, rapid turnaround</div></div>
+    <div class="client-box"><div class="cb-icon">🏗️</div><div class="cb-name">General Contractors</div><div class="cb-desc">Full exterior scopes, new construction bids</div></div>
+    <div class="client-box"><div class="cb-icon">🏠</div><div class="cb-name">Restoration Companies</div><div class="cb-desc">Storm damage assessment and restoration bids</div></div>
+    <div class="client-box"><div class="cb-icon">📊</div><div class="cb-name">Property Managers</div><div class="cb-desc">Portfolio roof assessments, maintenance planning</div></div>
+    <div class="client-box"><div class="cb-icon">🪟</div><div class="cb-name">Siding Contractors</div><div class="cb-desc">Wall & exterior measurements, full siding scopes</div></div>
+    <div class="client-box"><div class="cb-icon">🌧️</div><div class="cb-name">Gutter Installers</div><div class="cb-desc">Eave lengths, downspout count, miter corners</div></div>
+  </div>
+  <div class="sec-eyebrow" style="margin-bottom:16px"><div class="se-line"></div><div class="se-text">How We Compare</div></div>
+  <div style="overflow-x:auto">
+    <table class="cmp-table">
+      <thead><tr>
+        <th>Feature</th>
+        <th class="us">SwiftRoof ✦</th>
+        <th>Automated Tools</th>
+      </tr></thead>
+      <tbody>
+        <tr><td>Complex & irregular rooflines</td><td class="us"><span class="yes">✔ Fully supported</span></td><td><span class="maybe">⚠ Often inaccurate</span></td></tr>
+        <tr><td>Tree-covered properties</td><td class="us"><span class="yes">✔ Manual verification</span></td><td><span class="no">✘ Frequently fails</span></td></tr>
+        <tr><td>Rural / low-resolution areas</td><td class="us"><span class="yes">✔ Blueprint fallback</span></td><td><span class="no">✘ Not available</span></td></tr>
+        <tr><td>Blueprint-based measurement</td><td class="us"><span class="yes">✔ Accepted</span></td><td><span class="no">✘ Not supported</span></td></tr>
+        <tr><td>Human QC on every report</td><td class="us"><span class="yes">✔ Every single report</span></td><td><span class="no">✘ Fully automated</span></td></tr>
+        <tr><td>ESX + Symbility XML files</td><td class="us"><span class="yes">✔ Both available</span></td><td><span class="maybe">⚠ Varies by tool</span></td></tr>
+        <tr><td>Gutter + Wall in same order</td><td class="us"><span class="yes">✔ One-stop service</span></td><td><span class="maybe">⚠ Separate tools needed</span></td></tr>
+        <tr><td>Free revision guarantee</td><td class="us"><span class="yes">✔ Within 24 hours</span></td><td><span class="no">✘ Credits only</span></td></tr>
+        <tr><td>No subscription required</td><td class="us"><span class="yes">✔ Pay per report</span></td><td><span class="maybe">⚠ Often subscription</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="testimonials" class="sec">
+  <div class="sec-eyebrow"><div class="se-line"></div><div class="se-text">Client Reviews</div></div>
+  <div class="sec-h" style="margin-bottom:40px">Trusted Across<br><em>All 50 States</em></div>
+  <div class="testi-hero">
+    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1400&auto=format&fit=crop&q=80" alt="Roofing contractor on job site"/>
+    <div class="testi-hero-overlay"></div>
+    <div class="testi-hero-content">
+      <div class="th-stars">★★★★★</div>
+      <p class="th-quote">"Every automated tool I tried failed on my complex Victorian job. SwiftRoof delivered a perfect ESX in 18 hours. Opened directly into Xactimate — no issues at all. This is the only service I use now."</p>
+      <div class="th-name">Marcus T.</div>
+      <div class="th-role">Roofing Contractor — Dallas, Texas</div>
+    </div>
+  </div>
+  <div class="testi-row">
+    <div class="tc">
+      <div class="tc-stars">★★★★★</div>
+      <p class="tc-text">"As a public adjuster I need measurements that hold up under carrier scrutiny. SwiftRoof reports are detailed, accurate, and formatted exactly how adjusters expect. Always within 24 hours."</p>
+      <div class="tc-name">Sarah K.</div>
+      <div class="tc-role">Public Adjuster — Orlando, FL</div>
+    </div>
+    <div class="tc">
+      <div class="tc-stars">★★★★★</div>
+      <p class="tc-text">"I send 15–20 jobs a month to SwiftRoof. Consistent quality every time. The blueprint-based reports are a game changer for my new construction bids. Highly, highly recommended."</p>
+      <div class="tc-name">Brian L.</div>
+      <div class="tc-role">General Contractor — Denver, CO</div>
+    </div>
+    <div class="tc">
+      <div class="tc-stars">★★★★★</div>
+      <p class="tc-text">"After storm season hit Colorado, I had 30 jobs backed up. SwiftRoof cleared them all in 4 days. Every ESX was perfect. These guys scale with you when you need it most."</p>
+      <div class="tc-name">David R.</div>
+      <div class="tc-role">Restoration Contractor — Colorado Springs, CO</div>
+    </div>
+  </div>
+</section>
+
+<div style="padding:0 0 80px">
+  <div class="cta-banner">
+    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600&auto=format&fit=crop&q=80" alt="Professional roofing construction"/>
+    <div class="cta-banner-overlay"></div>
+    <div class="cta-content">
+      <div class="cc-left">
+        <h2>Start With Your<br><em>First Report Today</em></h2>
+        <p>Submit a job right now and receive your measurement report within 24 hours. New clients receive 10% off their first order automatically.</p>
+        <button class="btn-primary" style="margin-top:24px" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Submit Your First Job →</button>
+      </div>
+      <div class="cc-right">
+        <div class="cc-stat"><div class="css-num">$35</div><div class="css-lbl">Starting Price</div></div>
+        <div class="cc-stat"><div class="css-num">24hr</div><div class="css-lbl">Turnaround</div></div>
+        <div class="cc-stat"><div class="css-num">99%</div><div class="css-lbl">Accuracy</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="contact" class="sec sec-dark">
+  <div class="sec-eyebrow"><div class="se-line"></div><div class="se-text">Get Started</div></div>
+  <div class="sec-h" style="margin-bottom:48px">Submit Your Job.<br><em>Get Your Report.</em></div>
+  <div class="contact-wrap">
+    <div class="contact-form">
+      <div class="cf-title">Order a Report</div>
+      <div class="cf-sub">Fill in the details below. We confirm receipt within 1 hour and begin work immediately after payment.</div>
+      <div class="fg-row">
+        <div class="fg"><label>Your Name</label><input type="text" placeholder="John Smith"/></div>
+        <div class="fg"><label>Company</label><input type="text" placeholder="Smith Roofing LLC"/></div>
+      </div>
+      <div class="fg-row">
+        <div class="fg"><label>Email Address</label><input type="email" placeholder="john@smithroofing.com"/></div>
+        <div class="fg"><label>Phone / WhatsApp</label><input type="tel" placeholder="+1 (555) 000-0000"/></div>
+      </div>
+      <div class="fg"><label>Property Address</label><input type="text" placeholder="1234 Oak Street, Dallas TX 75201"/></div>
+      <div class="fg">
+        <label>Report Type</label>
+        <select>
+          <option value="">Select report type...</option>
+          <option>Simple Residential — $35</option>
+          <option>Complex Residential — $55</option>
+          <option>Simple Commercial — $65</option>
+          <option>Complex Commercial — $95</option>
+          <option>Multi-Family / Apartment — from $75</option>
+          <option>Blueprint-Based Measurement — $75</option>
+          <option>Gutter / Fascia — $35</option>
+          <option>Wall / Siding — $55</option>
+          <option>Starter Bundle (Roof + Gutter) — $60</option>
+          <option>Contractor Bid Bundle — $95</option>
+          <option>Full Property Bundle — $120</option>
+          <option>Volume Pricing — 20+ reports/month</option>
+        </select>
+      </div>
+      <div class="fg"><label>Special Notes</label><textarea placeholder="Rush delivery, tree coverage, specific concerns, blueprint attached..."></textarea></div>
+      <button class="submit-btn" onclick="alert('Thank you! We will confirm your order within 1 hour.')">Submit Job Request →</button>
+    </div>
+    <div class="contact-right">
+      <div class="cr-img">
+        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&auto=format&fit=crop&q=80" alt="Professional at work"/>
+      </div>
+      <div class="ci-items">
+        <div class="ci-item"><div class="ci-icon">📧</div><div><div class="ci-label">Email</div><div class="ci-val">orders@swiftroofmeasurements.com</div></div></div>
+        <div class="ci-item"><div class="ci-icon">💬</div><div><div class="ci-label">WhatsApp</div><div class="ci-val">+1 (555) 000-0000</div></div></div>
+        <div class="ci-item"><div class="ci-icon">🕐</div><div><div class="ci-label">Business Hours</div><div class="ci-val">Mon – Sat, 8am – 8pm EST</div></div></div>
+        <div class="ci-item"><div class="ci-icon">💳</div><div><div class="ci-label">Payment Methods</div><div class="ci-val">Payoneer · Wire Transfer · PayPal</div></div></div>
+        <div class="ci-item"><div class="ci-icon">🇺🇸</div><div><div class="ci-label">Coverage</div><div class="ci-val">All 50 US States + Canada</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div class="ft-brand">
+      <div class="ft-logo">Swift<em>Roof</em> Measurements</div>
+      <p class="ft-desc">Professional Xactimate-ready roof measurement reports. Human-verified accuracy for contractors, adjusters, and insurance companies across all 50 states.</p>
+    </div>
+    <div class="ft-col">
+      <h4>Services</h4>
+      <a href="#services">Simple Residential</a>
+      <a href="#services">Complex Residential</a>
+      <a href="#services">Commercial Reports</a>
+      <a href="#services">Blueprint-Based</a>
+      <a href="#services">Bundle Packages</a>
+    </div>
+    <div class="ft-col">
+      <h4>Company</h4>
+      <a href="#why">Why SwiftRoof</a>
+      <a href="#process">How It Works</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#contact">Contact Us</a>
+    </div>
+    <div class="ft-col">
+      <h4>Contact</h4>
+      <a>orders@swiftroofmeasurements.com</a>
+      <a>+1 (555) 000-0000</a>
+      <a>Mon–Sat, 8am–8pm EST</a>
+      <a>All 50 States + Canada</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="fb-copy">© 2026 SwiftRoof Measurements. All rights reserved. Operating under MS Global Exports.</div>
+    <div class="fb-badges">
+      <span class="fb-badge">Xactimate Ready</span>
+      <span class="fb-badge">ESX + PDF</span>
+      <span class="fb-badge">24hr Delivery</span>
+      <span class="fb-badge">All 50 States</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
