@@ -1,0 +1,8 @@
+TRUE TRACE — ORIGINAL STYLE + SEO PAGES
+
+1. Copy everything in this folder into your GitHub repository root.
+2. Replace index.html, robots.txt and sitemap.xml when asked.
+3. Replace the SEO page folders from the previous build with these folders.
+4. Keep your existing CNAME, favicons, landing.html and the two sample PDF files.
+5. The homepage keeps the original TrueTrace layout, service cards, fonts and order form.
+6. assets/css/ttm-pages.css styles only the new SEO pages.

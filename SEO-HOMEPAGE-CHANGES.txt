@@ -1,0 +1,11 @@
+TrueTrace homepage SEO update
+
+Homepage design and form flow preserved.
+Changes made:
+- SEO-focused H1 and hero copy
+- Proper H2 structure for all major homepage sections
+- H3 structure for service, deliverable, benefit and audience cards
+- Improved copy for roof measurement services, aerial roof measurements, ESX, XML and Xactimate
+- Internal links from homepage to dedicated SEO landing pages
+- Updated title, meta description, Open Graph text and structured-data description
+- Existing service cards, pricing, Google Sheets integration, PayPal logic and order-form JavaScript were left intact
