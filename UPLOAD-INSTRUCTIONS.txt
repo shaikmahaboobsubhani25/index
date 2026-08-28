@@ -1,8 +1,19 @@
-TRUE TRACE — ORIGINAL STYLE + SEO PAGES
+TRUETRACE FINAL WEBSITE
 
-1. Copy everything in this folder into your GitHub repository root.
-2. Replace index.html, robots.txt and sitemap.xml when asked.
-3. Replace the SEO page folders from the previous build with these folders.
-4. Keep your existing CNAME, favicons, landing.html and the two sample PDF files.
-5. The homepage keeps the original TrueTrace layout, service cards, fonts and order form.
-6. assets/css/ttm-pages.css styles only the new SEO pages.
+1. Copy ALL contents of this folder into your cloned GitHub repository root.
+2. Replace index.html, robots.txt and sitemap.xml when prompted.
+3. KEEP your existing CNAME, favicon files, landing.html and the two existing roof sample PDFs:
+   - ESX_Commercial_Roof_Report_Sample_TTM.pdf
+   - XML_Residential_Roof_Report_Sample_TTM.pdf
+4. Wall_Sample_Report_TTM.pdf IS INCLUDED in this package and must be uploaded to GitHub.
+5. Delete these OLD page folders from the local repository before committing, because the final site no longer uses them:
+   sample-roof-measurement-report
+   roof-measurements-for-public-adjusters
+   esx-roof-reports
+   residential-roof-measurements
+   commercial-roof-measurements
+   xactimate-roof-measurements
+   roof-measurements-for-roofing-contractors
+   resources
+6. Do NOT delete: aerial-roof-measurements or roof-measurement-reports; they are replaced by this package.
+7. Commit to main and Push origin.
