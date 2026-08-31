@@ -827,6 +827,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     .fmt-tag.pdf{background:#DCFCE7;color:#166534}
     .svc-order-btn{display:block;width:100%;padding:10px;background:var(--gold2);color:#1C2128;font-family:var(--font-head);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:none;border-radius:6px;cursor:pointer;text-align:center;transition:background .2s;margin-top:auto}
     .svc-order-btn:hover{background:var(--gold3)}
+    .svc-page-btn{display:block;width:100%;padding:10px;background:#fff;color:#1E3048;font-family:var(--font-head);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:1px solid #CBD5E1;border-radius:6px;cursor:pointer;text-align:center;transition:all .2s;margin-top:8px;text-decoration:none}
+    .svc-page-btn:hover{border-color:var(--gold2);color:var(--gold);background:#FFFBF2}
     .offer-banners{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px}
     .svc-offer-banner{padding:16px 20px;border-radius:10px;display:flex;align-items:center;gap:14px}
     .svc-offer-banner.free-banner{background:linear-gradient(135deg,#14532d,#166534);border:2px solid #4ade80}
@@ -2643,23 +2645,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 ═══════════════════════════════════════ -->
 <section id="sample-report" class="sec sec-dark">
   <div class="sec-eyebrow"><div class="se-line"></div><div class="se-text">Sample Reports</div></div>
-  <h2 class="sec-h" style="margin-bottom:12px">View Sample Roof Measurement Reports.<br><em>See What You'll Receive</em></h2>
-  <p class="sec-p">Review sample roof measurement reports before you order. See how roof areas, pitch values, linear measurements, diagrams and waste-factor information are organized in TrueTrace ESX- and XML-based report formats. No signup required.</p>
+  <h2 class="sec-h" style="margin-bottom:12px">View Sample Measurement Reports.<br><em>See What You'll Receive</em></h2>
+  <p class="sec-p">Review our roof and wall sample reports before you order. Compare ESX and XML roof report formats, and see how wall elevations, wall areas, openings and material details are organized in a TrueTrace wall report. No signup required.</p>
 
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:860px" id="sample-cards">
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1180px" id="sample-cards">
 
     <!-- ESX PDF Report Card -->
     <div style="background:#FFFFFF;border:1px solid #DDE2EA;border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.08);display:flex;flex-direction:column">
       <div style="background:#12223A;padding:18px 22px;display:flex;align-items:center;gap:12px">
         <div style="width:44px;height:44px;background:rgba(201,137,10,0.15);border:1px solid rgba(201,137,10,0.3);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0">📊</div>
         <div>
-          <div style="font-family:var(--font-head);font-size:16px;font-weight:800;color:#FFFFFF;margin-bottom:2px">ESX PDF Report</div>
+          <div style="font-family:var(--font-head);font-size:16px;font-weight:800;color:#FFFFFF;margin-bottom:2px">ESX Roof PDF Report</div>
           <div style="font-size:11px;color:#8FA3B8">Xactimate Format · Sample Report</div>
         </div>
       </div>
       <div style="padding:18px 22px;display:flex;flex-direction:column;flex:1">
         <p style="font-size:13px;color:#5A6478;line-height:1.7;margin-bottom:16px;flex:1">A sample of our ESX-based PDF report showing how measurements are structured and delivered for Xactimate users — roof areas, pitches, lengths and waste factors all included.</p>
-        <button onclick="openSampleReport('esx')" style="display:block;width:100%;padding:13px;background:var(--gold2);color:#1C2128;font-family:var(--font-head);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:none;border-radius:8px;cursor:pointer;text-align:center;transition:background .2s;box-sizing:border-box">👁 View ESX PDF Report</button>
+        <a href="/ESX_Commercial_Roof_Report_Sample_TTM.pdf" target="_blank" rel="noopener" style="display:block;width:100%;padding:13px;background:var(--gold2);color:#1C2128;font-family:var(--font-head);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:none;border-radius:8px;cursor:pointer;text-align:center;transition:background .2s;box-sizing:border-box;text-decoration:none">👁 View ESX PDF Report</a>
         <div style="text-align:center;margin-top:8px;font-size:11px;color:#8A9AAB">Opens in new tab · Free · No signup</div>
       </div>
     </div>
@@ -2669,13 +2671,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div style="background:#12223A;padding:18px 22px;display:flex;align-items:center;gap:12px">
         <div style="width:44px;height:44px;background:rgba(201,137,10,0.15);border:1px solid rgba(201,137,10,0.3);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0">📐</div>
         <div>
-          <div style="font-family:var(--font-head);font-size:16px;font-weight:800;color:#FFFFFF;margin-bottom:2px">XML PDF Report</div>
+          <div style="font-family:var(--font-head);font-size:16px;font-weight:800;color:#FFFFFF;margin-bottom:2px">XML Roof PDF Report</div>
           <div style="font-size:11px;color:#8FA3B8">AppliCad Format · Sample Report</div>
         </div>
       </div>
       <div style="padding:18px 22px;display:flex;flex-direction:column;flex:1">
         <p style="font-size:13px;color:#5A6478;line-height:1.7;margin-bottom:16px;flex:1">A sample of our XML-based PDF report showing the AppliCad output format — detailed roof measurements, oblique photos, area diagrams, pitch plans and waste calculations.</p>
-        <button onclick="openSampleReport('residential')" style="display:block;width:100%;padding:13px;background:var(--gold2);color:#1C2128;font-family:var(--font-head);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:none;border-radius:8px;cursor:pointer;text-align:center;transition:background .2s;box-sizing:border-box">👁 View XML PDF Report</button>
+        <a href="/XML_Residential_Roof_Report_Sample_TTM.pdf" target="_blank" rel="noopener" style="display:block;width:100%;padding:13px;background:var(--gold2);color:#1C2128;font-family:var(--font-head);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:none;border-radius:8px;cursor:pointer;text-align:center;transition:background .2s;box-sizing:border-box;text-decoration:none">👁 View XML PDF Report</a>
+        <div style="text-align:center;margin-top:8px;font-size:11px;color:#8A9AAB">Opens in new tab · Free · No signup</div>
+      </div>
+    </div>
+
+    <!-- Wall PDF Report Card -->
+    <div style="background:#FFFFFF;border:1px solid #DDE2EA;border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.08);display:flex;flex-direction:column">
+      <div style="background:#12223A;padding:18px 22px;display:flex;align-items:center;gap:12px">
+        <div style="width:44px;height:44px;background:rgba(201,137,10,0.15);border:1px solid rgba(201,137,10,0.3);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0">🧱</div>
+        <div>
+          <div style="font-family:var(--font-head);font-size:16px;font-weight:800;color:#FFFFFF;margin-bottom:2px">Wall PDF Report</div>
+          <div style="font-size:11px;color:#8FA3B8">Wall Measurements · Sample Report</div>
+        </div>
+      </div>
+      <div style="padding:18px 22px;display:flex;flex-direction:column;flex:1">
+        <p style="font-size:13px;color:#5A6478;line-height:1.7;margin-bottom:16px;flex:1">A sample of our wall report showing wall elevations, area details by side, masonry and siding breakdowns, windows and doors information, waste-factor calculations and soffit details.</p>
+        <a href="/Wall_Sample_Report_TTM.pdf" target="_blank" rel="noopener" style="display:block;width:100%;padding:13px;background:var(--gold2);color:#1C2128;font-family:var(--font-head);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:none;border-radius:8px;cursor:pointer;text-align:center;transition:background .2s;box-sizing:border-box;text-decoration:none">👁 View Wall PDF Report</a>
         <div style="text-align:center;margin-top:8px;font-size:11px;color:#8A9AAB">Opens in new tab · Free · No signup</div>
       </div>
     </div>
@@ -2727,8 +2745,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <a href="/residential-roof-measurements/" style="font-size:13px;color:#7A8FA3;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#C9890A'" onmouseout="this.style.color='#7A8FA3'">🏠 Residential Roof</a>
           <a href="/commercial-roof-measurements/" style="font-size:13px;color:#7A8FA3;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#C9890A'" onmouseout="this.style.color='#7A8FA3'">🏢 Commercial Roof</a>
           <a href="#services" style="font-size:13px;color:#7A8FA3;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#C9890A'" onmouseout="this.style.color='#7A8FA3'">🏘️ Multifamily</a>
-          <a href="#services" style="font-size:13px;color:#7A8FA3;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#C9890A'" onmouseout="this.style.color='#7A8FA3'">🧱 Residential Wall</a>
-          <a href="#services" style="font-size:13px;color:#7A8FA3;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#C9890A'" onmouseout="this.style.color='#7A8FA3'">🏗️ Commercial Wall</a>
+          <a href="/wall-reports/" style="font-size:13px;color:#7A8FA3;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#C9890A'" onmouseout="this.style.color='#7A8FA3'">🧱 Residential Wall</a>
+          <a href="/wall-reports/" style="font-size:13px;color:#7A8FA3;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#C9890A'" onmouseout="this.style.color='#7A8FA3'">🏗️ Commercial Wall</a>
           <a href="#services" style="font-size:13px;color:#7A8FA3;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#C9890A'" onmouseout="this.style.color='#7A8FA3'">📐 Blueprint Report</a>
           <a href="#services" style="font-size:13px;color:#4ade80;text-decoration:none;font-weight:600" onmouseover="this.style.color='#86efac'" onmouseout="this.style.color='#4ade80'">🌧️ Gutter Add-on (+$5)</a>
         </div>
@@ -2746,6 +2764,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <a href="#sample-report" onclick="document.getElementById('sample-report').scrollIntoView({behavior:'smooth'});return false;" style="font-size:13px;color:#7A8FA3;text-decoration:none;cursor:pointer" onmouseover="this.style.color='#C9890A'" onmouseout="this.style.color='#7A8FA3'">👁 View Sample Reports</a>
           <a href="/aerial-roof-measurements/" style="font-size:13px;color:#7A8FA3;text-decoration:none" onmouseover="this.style.color='#C9890A'" onmouseout="this.style.color='#7A8FA3'">Aerial Roof Measurements</a>
           <a href="/roof-measurement-reports/" style="font-size:13px;color:#7A8FA3;text-decoration:none" onmouseover="this.style.color='#C9890A'" onmouseout="this.style.color='#7A8FA3'">Roof Measurement Reports</a>
+          <a href="/wall-reports/" style="font-size:13px;color:#7A8FA3;text-decoration:none" onmouseover="this.style.color='#C9890A'" onmouseout="this.style.color='#7A8FA3'">Wall Measurement Reports</a>
           <a href="/xactimate-roof-measurements/" style="font-size:13px;color:#7A8FA3;text-decoration:none" onmouseover="this.style.color='#C9890A'" onmouseout="this.style.color='#7A8FA3'">Xactimate / ESX Reports</a>
           <a href="/resources/how-to-measure-a-roof/" style="font-size:13px;color:#7A8FA3;text-decoration:none" onmouseover="this.style.color='#C9890A'" onmouseout="this.style.color='#7A8FA3'">Resources</a>
         </div>
@@ -2816,13 +2835,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </footer>
 
 <script>
-function openSampleReport(type) {
-  var urls = {
-    esx: 'ESX_Commercial_Roof_Report_Sample_TTM.pdf',
-    residential: 'XML_Residential_Roof_Report_Sample_TTM.pdf'
-  };
-  window.open(urls[type || 'residential'], '_blank');
-}
 </script>
 </body>
 </html>
